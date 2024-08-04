@@ -23,7 +23,7 @@ jobs:
           terraform_version: 1.9.0
 
       - name: Terraform Init
-        run: terraform init -chdir=./cloudflare
+        run: terraform init
 
       - name: Terraform Plan
         run: terraform plan -chdir=./cloudflare
