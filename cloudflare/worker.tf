@@ -6,7 +6,6 @@ resource "cloudflare_worker_script" "mnt_profile" {
 }
 
 resource "cloudflare_worker_route" "mnt_profile_route" {
-  pattern = "mnt_profile.monta-k0523.workers.dev"
-  enabled = true
+  pattern = "monta-k0523.workers.dev/*"
   script_name = cloudflare_worker_script.mnt_profile.name
 }
