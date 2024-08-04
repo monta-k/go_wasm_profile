@@ -6,7 +6,6 @@ resource "cloudflare_worker_script" "mnt_profile" {
 }
 
 resource "cloudflare_worker_route" "mnt_profile_route" {
-  zone_id = var.cloudflare_zone_id
   pattern = "mnt_profile.monta-k0523.workers.dev"
   enabled = true
   script_name = cloudflare_worker_script.mnt_profile.name
