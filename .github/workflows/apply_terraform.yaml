@@ -23,10 +23,10 @@ jobs:
           terraform_version: 1.9.0
 
       - name: Terraform Init
-        run: terraform init ./cloudflare
+        run: terraform init -chdir=./cloudflare
 
       - name: Terraform Plan
-        run: terraform plan ./cloudflare
+        run: terraform plan -chdir=./cloudflare
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve ./cloudflare
+        run: terraform apply -auto-approve -chdir=./cloudflare
