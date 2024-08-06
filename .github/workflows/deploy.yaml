@@ -9,6 +9,10 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v3
+      - name: Setup TinyGo
+        uses: acifani/setup-tinygo@v2
+        with:
+          tinygo-version: 0.30.0
       - name: Build
         run: make build
       - name: Deploy
