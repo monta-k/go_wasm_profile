@@ -9,6 +9,8 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v3
+      - name: Build
+        run: make build
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
