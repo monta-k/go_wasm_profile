@@ -4,6 +4,7 @@ import "syscall/js"
 
 func main() {
 	js.Global().Set("serveHTML", js.FuncOf(serveHTML))
+	select {}
 }
 
 func serveHTML(this js.Value, p []js.Value) interface{} {

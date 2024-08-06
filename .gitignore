@@ -9,3 +9,5 @@ tfplan*
 
 # Terraform lock file override. We need to add this file to maintain the provider dependencies
 !.terraform.lock.hcl
+
+node_modules
