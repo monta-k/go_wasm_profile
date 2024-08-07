@@ -22,7 +22,7 @@ func serveHTML(this js.Value, p []js.Value) interface{} {
 		<head>
 			<title>Go WebAssembly</title>
 		</head>
-		<body>
+		<body style="background-color: #169790;">
 			%s
 		</body>
 	</html>
