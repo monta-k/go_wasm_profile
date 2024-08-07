@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - ".github/workflows/apply_terraform.yaml"
-      - "cloudflare/**"
+      - "terraform/**"
 
 env:
   TF_VAR_cloudflare_api_token: ${{ secrets.CF_API_TOKEN }}
@@ -27,13 +27,13 @@ jobs:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Init
-        working-directory: ./cloudflare
+        working-directory: ./terraform
         run: terraform init
 
       - name: Terraform Plan
-        working-directory: ./cloudflare
+        working-directory: ./terraform
         run: terraform plan
 
       - name: Terraform Apply
-        working-directory: ./cloudflare
+        working-directory: ./terraform
         run: terraform apply -auto-approve
