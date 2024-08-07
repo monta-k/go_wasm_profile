@@ -11,3 +11,5 @@ tfplan*
 !.terraform.lock.hcl
 
 node_modules
+
+.wrangler
