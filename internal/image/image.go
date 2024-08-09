@@ -1,8 +1,7 @@
-package internal
+package image
 
 import (
 	"encoding/base64"
-	"fmt"
 	"syscall/js"
 )
 
@@ -21,8 +20,4 @@ func generateBase64Image(imageData []byte) string {
 func ConvertToBase64ImageFromJSData(input interface{}) string {
 	imageData := convertToImageDataFromJSData(input)
 	return generateBase64Image(imageData)
-}
-
-func GenerageLogoImgTag(base64ImageData string) string {
-	return fmt.Sprintf(`<img width="600px" src="data:image/png;base64,%s" alt="Site Logo" style="padding-top: 50px; position: absolute; right: 0; transform: rotate(20deg);" />`, base64ImageData)
 }

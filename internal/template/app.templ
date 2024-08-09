@@ -1,0 +1,13 @@
+package template
+
+templ app(logoBase64ImageData string) {
+  <!DOCTYPE html>
+	<html>
+		<head>
+			<title>Go WebAssembly</title>
+		</head>
+		<body style="background-color: #169790;">
+			@logoImage(logoBase64ImageData)
+		</body>
+	</html>
+}

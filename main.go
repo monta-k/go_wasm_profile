@@ -1,10 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"context"
 	"syscall/js"
 
-	"github.com/monta-k/go_wasm_profile/internal"
+	"github.com/a-h/templ"
+	"github.com/monta-k/go_wasm_profile/internal/image"
+	"github.com/monta-k/go_wasm_profile/internal/template"
 )
 
 func main() {
@@ -13,19 +15,13 @@ func main() {
 }
 
 func serveHTML(this js.Value, p []js.Value) interface{} {
-	base64Image := internal.ConvertToBase64ImageFromJSData(p[0])
-	imageTag := internal.GenerageLogoImgTag(base64Image)
+	base64Image := image.ConvertToBase64ImageFromJSData(p[0])
 
-	html := fmt.Sprintf(`
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<title>Go WebAssembly</title>
-		</head>
-		<body style="background-color: #169790;">
-			%s
-		</body>
-	</html>
-	`, imageTag)
-	return js.ValueOf(html)
+	templHTML := template.App(base64Image)
+	html, err := templ.ToGoHTML(context.Background(), templHTML)
+	if err != nil {
+		return js.ValueOf("")
+	}
+
+	return js.ValueOf(string(html))
 }
