@@ -1,0 +1,25 @@
+package template
+
+type ProfileData struct {
+	Key   string
+	Value string
+}
+
+var profileData = []ProfileData{
+	{Key: "Name", Value: "Kobayashi"},
+	{Key: "Job", Value: "Software Engineer"},
+	{Key: "Birthplace", Value: "Hyogo, Japan"},
+	{Key: "Location", Value: "Tokyo, Japan"},
+	{Key: "Skills", Value: "Go, TypeScript"},
+}
+
+templ profileSection() {
+	<h2 class="text-xl font-bold mb-4">Profile</h2>
+	<div class="grid-cols-1 grid gap-1">
+		for _, profile := range profileData {
+			<p class="text-gray-700">
+				{ profile.Key }: { profile.Value }
+			</p>
+		}
+	</div>
+}

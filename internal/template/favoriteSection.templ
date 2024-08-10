@@ -1,0 +1,30 @@
+package template
+
+import "strings"
+
+type FavoriteData struct {
+	Key    string
+	Values []string
+}
+
+var favoriteData = []FavoriteData{
+	{Key: "Movie", Values: []string{"Paul Thomas Anderson", "Aki Kaurismäki", "Quentin Tarantino", "Wes Anderson"}},
+	{Key: "Music", Values: []string{"Tempalay", "Superorganism", "Radiohead", "Oasis"}},
+	{Key: "Vintage Clothing", Values: []string{}},
+}
+
+templ favoriteSection() {
+	<h2 class="text-xl font-bold mb-4">Favorite</h2>
+	<div class="grid-cols-1 grid gap-1">
+		for _, favorite := range favoriteData {
+			<div class="mb-6">
+				<div class="flex justify-between flex-wrap gap-2 w-full">
+					<span class="text-gray-700 font-bold">{ favorite.Key }</span>
+				</div>
+				<p class="mt-2">
+					{ strings.Join(favorite.Values, ", ") }
+				</p>
+			</div>
+		}
+	</div>
+}

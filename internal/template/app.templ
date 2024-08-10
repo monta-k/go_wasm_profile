@@ -1,13 +1,25 @@
 package template
 
 templ app() {
-  <!DOCTYPE html>
+	<!DOCTYPE html>
 	<html>
 		<head>
-			<title>Go WebAssembly</title>
+			<title>mnt.profile</title>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet"/>
 		</head>
-		<body style="background-color: #169790;">
-			<h1>Go WebAssembly</h1>
+		<body>
+			<div class="col-span-4 sm:col-span-9">
+				<div class="bg-white p-6">
+					@profileSection()
+					@snsSection()
+					@favoriteSection()
+					@experienceSection()
+				</div>
+			</div>
+			<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 		</body>
 	</html>
 }

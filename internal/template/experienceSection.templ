@@ -1,0 +1,33 @@
+package template
+
+type ExperienceData struct {
+	position       string
+	companyName    string
+	startYearMonth string
+	endYearMonth   string
+	detail         string
+}
+
+var experienceData = []ExperienceData{
+	{position: "Software Engineer", companyName: "OpenFashion Inc.", startYearMonth: "2020/02", endYearMonth: "now", detail: "Details to be added later"},
+	{position: "Software Engineer", companyName: "DEPARTURE Inc.", startYearMonth: "2019/04", endYearMonth: "2020/01", detail: "Details to be added later"},
+	{position: "System Engineer", companyName: "NTT DATA, Inc.", startYearMonth: "2018/04", endYearMonth: "2019/03", detail: "Details to be added later"},
+}
+
+templ experienceSection() {
+	<h2 class="text-xl font-bold mt-6 mb-4">Experience</h2>
+	for _, experience := range experienceData {
+		<div class="mb-6">
+			<div class="flex justify-between flex-wrap gap-2 w-full">
+				<span class="text-gray-700 font-bold">{ experience.position }</span>
+				<p>
+					<span class="text-gray-700 mr-2">at { experience.companyName }</span>
+					<span class="text-gray-700">{ experience.startYearMonth } - { experience.endYearMonth }</span>
+				</p>
+			</div>
+			<p class="mt-2">
+				{ experience.detail }
+			</p>
+		</div>
+	}
+}
