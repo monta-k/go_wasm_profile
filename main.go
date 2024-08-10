@@ -1,27 +1,17 @@
 package main
 
 import (
-	"context"
-	"syscall/js"
+	"net/http"
 
 	"github.com/a-h/templ"
-	"github.com/monta-k/go_wasm_profile/internal/image"
 	"github.com/monta-k/go_wasm_profile/internal/template"
 )
 
 func main() {
-	js.Global().Set("serveHTML", js.FuncOf(serveHTML))
-	select {}
-}
+	component := template.App()
 
-func serveHTML(this js.Value, p []js.Value) interface{} {
-	base64Image := image.ConvertToBase64ImageFromJSData(p[0])
-
-	templHTML := template.App(base64Image)
-	html, err := templ.ToGoHTML(context.Background(), templHTML)
-	if err != nil {
-		return js.ValueOf("")
+	http.Handle("/", templ.Handler(component))
+	if err := http.ListenAndServe(":3000", nil); err != nil {
+		panic(err)
 	}
-
-	return js.ValueOf(string(html))
 }
