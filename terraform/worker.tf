@@ -27,8 +27,8 @@ EOF
   }
 }
 
-resource "cloudflare_worker_route" "mnt_profile_route" {
+resource "cloudflare_worker_custom_domain" "example_custom_domain" {
   zone_id = var.cloudflare_zone_id
-  pattern = "kmnt.info/*"
+  pattern = "kmnt.info"
   script_name = cloudflare_worker_script.mnt_profile.name
 }
