@@ -15,10 +15,11 @@ type ProfileData struct {
 
 var profileData = []ProfileData{
 	{Key: "Name", Value: "Kobayashi"},
+	{Key: "Degree", Value: "Bachelor of Liberal Arts, Kobe University"},
 	{Key: "Job", Value: "Software Engineer"},
+	{Key: "Skills", Value: "Go, TypeScript"},
 	{Key: "Birthplace", Value: "Hyogo, Japan"},
 	{Key: "Location", Value: "Tokyo, Japan"},
-	{Key: "Skills", Value: "Go, TypeScript"},
 }
 
 func profileSection() templ.Component {
@@ -51,7 +52,7 @@ func profileSection() templ.Component {
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(profile.Key)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/profileSection.templ`, Line: 21, Col: 17}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/profileSection.templ`, Line: 22, Col: 17}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
@@ -64,7 +65,7 @@ func profileSection() templ.Component {
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(profile.Value)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/profileSection.templ`, Line: 21, Col: 36}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/profileSection.templ`, Line: 22, Col: 36}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
