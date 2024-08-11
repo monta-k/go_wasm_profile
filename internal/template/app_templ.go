@@ -46,7 +46,7 @@ func app() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><footer class=\"flex justify-center items-center text-gray-500 text-sm mt-4 space-x-2\"><p>This website is hosted on Cloudflare Workers using TinyGo, templ, and WASM.</p><a href=\"https://github.com/monta-k/mnt-profile\" target=\"_blank\" class=\"text-blue-500\">Github</a></footer></div><script src=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js\"></script></body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><footer class=\"flex flex-col sm:flex-row justify-center items-center text-gray-500 text-sm space-x-0 space-y-2 sm:space-x-2 sm:space-y-0  p-6\"><a href=\"https://github.com/monta-k/mnt-profile\" target=\"_blank\" class=\"text-blue-500\">Github</a><p>This website is hosted on Cloudflare Workers using TinyGo, templ, and WASM.</p></footer><script src=\"https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js\"></script></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
