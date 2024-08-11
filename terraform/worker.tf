@@ -26,3 +26,9 @@ EOF
     ]
   }
 }
+
+resource "cloudflare_worker_route" "mnt_profile_route" {
+  zone_id = var.cloudflare_zone_id
+  pattern = "kmnt.info/*"
+  script_name = cloudflare_worker_script.mnt_profile.name
+}
