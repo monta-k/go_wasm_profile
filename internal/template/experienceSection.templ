@@ -5,13 +5,13 @@ type ExperienceData struct {
 	companyName    string
 	startYearMonth string
 	endYearMonth   string
-	detail         string
+	details        []string
 }
 
 var experienceData = []ExperienceData{
-	{position: "Software Engineer", companyName: "OpenFashion Inc.", startYearMonth: "2020/02", endYearMonth: "2024/09", detail: "Details to be added later"},
-	{position: "Software Engineer", companyName: "DEPARTURE Inc.", startYearMonth: "2019/04", endYearMonth: "2020/01", detail: "Details to be added later"},
-	{position: "System Engineer", companyName: "NTT DATA, Inc.", startYearMonth: "2018/04", endYearMonth: "2019/03", detail: "Details to be added later"},
+	{position: "Software Engineer", companyName: "OpenFashion Inc.", startYearMonth: "2020/02", endYearMonth: "2024/09", details: []string{"EC Platform: Worked as a Lead Engineer utilizing Go and Next.js.", "Generative AI Tool: Worked as a Lead Engineer utilizing Next.js."}},
+	{position: "Software Engineer", companyName: "DEPARTURE Inc.", startYearMonth: "2019/04", endYearMonth: "2020/01", details: []string{"Photography Request and Delivery Platform: Worked As a Software Engineer utilizing Ruby on Rails and Vue.js."}},
+	{position: "System Engineer", companyName: "NTT DATA, Inc.", startYearMonth: "2018/04", endYearMonth: "2019/03", details: []string{"Core Banking System: Worked as a System Engineer utilizing COBOL."}},
 }
 
 templ experienceSection() {
@@ -25,9 +25,13 @@ templ experienceSection() {
 					<span class="text-gray-700">{ experience.startYearMonth } - { experience.endYearMonth }</span>
 				</p>
 			</div>
-			<p class="mt-2">
-				{ experience.detail }
-			</p>
+			<div class="mt-2">
+				for _, detail := range experience.details {
+					<p class="text-xs px-2 pb-1">
+						{ detail }
+					</p>
+				}
+			</div>
 		</div>
 	}
 }
