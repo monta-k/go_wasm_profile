@@ -17,6 +17,7 @@ type ExperienceData struct {
 }
 
 var experienceData = []ExperienceData{
+	{position: "Software Engineer", companyName: "U-NEXT Co., Ltd.", startYearMonth: "2024/10", endYearMonth: "", details: []string{}},
 	{position: "Software Engineer", companyName: "OpenFashion Inc.", startYearMonth: "2020/02", endYearMonth: "2024/09", details: []string{"EC Platform: Worked as a Lead Engineer utilizing Go and Next.js.", "Generative AI Tool: Worked as a Lead Engineer utilizing Next.js."}},
 	{position: "Software Engineer", companyName: "DEPARTURE Inc.", startYearMonth: "2019/04", endYearMonth: "2020/01", details: []string{"Photography Request and Delivery Platform: Worked As a Software Engineer utilizing Ruby on Rails and Vue.js."}},
 	{position: "System Engineer", companyName: "NTT DATA, Inc.", startYearMonth: "2018/04", endYearMonth: "2019/03", details: []string{"Core Banking System: Worked as a System Engineer utilizing COBOL."}},
@@ -52,7 +53,7 @@ func experienceSection() templ.Component {
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(experience.position)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 22, Col: 63}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 23, Col: 63}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
@@ -65,7 +66,7 @@ func experienceSection() templ.Component {
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(experience.companyName)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 24, Col: 65}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 25, Col: 65}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
@@ -78,7 +79,7 @@ func experienceSection() templ.Component {
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(experience.startYearMonth)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 25, Col: 60}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 26, Col: 60}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
@@ -91,7 +92,7 @@ func experienceSection() templ.Component {
 			var templ_7745c5c3_Var5 string
 			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(experience.endYearMonth)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 25, Col: 90}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 26, Col: 90}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 			if templ_7745c5c3_Err != nil {
@@ -109,7 +110,7 @@ func experienceSection() templ.Component {
 				var templ_7745c5c3_Var6 string
 				templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(detail)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 31, Col: 14}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/template/experienceSection.templ`, Line: 32, Col: 14}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 				if templ_7745c5c3_Err != nil {
